@@ -35,7 +35,10 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, angle, 0)), Time.deltaTime * rotationSpeed);
         }
 
-        rigid.velocity = transform.forward * moveSpeed;
+        if (movement.sqrMagnitude > 0.01)
+            rigid.velocity = transform.forward * moveSpeed;
+        else
+            rigid.velocity = Vector3.zero;
     }
 
     private void OnMoveUp()

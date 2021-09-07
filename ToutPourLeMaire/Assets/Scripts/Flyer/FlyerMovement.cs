@@ -20,7 +20,7 @@ public class FlyerMovement : MonoBehaviour
         initialPos = transform.position;
         rigidbody = GetComponent<Rigidbody>();
 
-        rigidbody.velocity = transform.InverseTransformVector(transform.forward) * speedFlyer;
+        rigidbody.velocity = transform.forward * speedFlyer;
     }
 
     // Update is called once per frame
