@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75af0666ba198c441b2011451552f22e, type: 3}
   m_Name: ShakeData_Shoot
   m_EditorClassIdentifier: 
-  _magnitude: 0.1
+  _magnitude: 0.08
   _duration: 0.13
   _curve:
     serializedVersion: 2
