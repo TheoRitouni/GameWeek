@@ -19,9 +19,16 @@ public class PlayerMovement : MonoBehaviour
     public Action onStartRunning;
     public Action onStopRunning;
 
+    [SerializeField] private float forceBump = 200f;
+
+    private PlayerInput playerInput;
+    [SerializeField] private InputActionAsset inputaction;
+
+
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        //GetComponent<PlayerInput>().actions = inputaction;
     }
 
     // Update is called once per frame
@@ -63,5 +70,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-  
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.CompareTag("PlayerB"))
+        {
+            print("oy");
+            rigid.AddForce(-transform.forward * forceBump);
+            collision.collider.GetComponent<Rigidbody>().AddForce(-transform.forward * forceBump);
+        }
+    }
+
+
 }
