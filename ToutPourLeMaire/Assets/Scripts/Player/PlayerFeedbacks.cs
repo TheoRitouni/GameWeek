@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlayerFeedbacks : MonoBehaviour
 {
+    [SerializeField] PlayerShoot playerShoot;
+
+    [Header("Data")]
     [SerializeField] HitstopData hitstopData;
     [SerializeField] ShakeData shakeData;
 
-
     private void Start()
     {
-        Invoke("OnThrowFlyer", 1f);
+        playerShoot.onShoot += OnShoot;
     }
 
-    private void OnThrowFlyer()
+    void OnShoot()
     {
         ShakeManager.getInstance().Shake(shakeData);
     }

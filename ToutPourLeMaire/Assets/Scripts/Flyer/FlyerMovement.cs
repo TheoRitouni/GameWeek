@@ -33,7 +33,15 @@ public class FlyerMovement : MonoBehaviour
         }
 
         if (maxDistance < Vector3.Distance(transform.position, initialPos))
-            Destroy(gameObject);
+            DestroyFlyer();
+
+        if (rigidbody.velocity.magnitude <= 0.1f)
+            DestroyFlyer();
+    }
+
+    private void DestroyFlyer()
+    {
+        Destroy(gameObject);
     }
 
 
