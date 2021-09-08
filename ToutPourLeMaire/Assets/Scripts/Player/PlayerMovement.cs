@@ -63,12 +63,5 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnMoveUp()
-    {
-        Debug.Log("up");
-    }
-    private void OnMoveDown()
-    {
-        Debug.Log("down");
-    }
+  
 }

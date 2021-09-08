@@ -9,11 +9,16 @@ public class SpawnerPlayer : MonoBehaviour
     [SerializeField]private Transform spawn1;
     [SerializeField]private Transform spawn2;
 
+    [Space]
+    [SerializeField] private GameObject playerRedPrefab;
+
+    private PlayerInputManager playerIM;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerIM = gameObject.GetComponent<PlayerInputManager>();
     }
 
     // Update is called once per frame
@@ -27,7 +32,10 @@ public class SpawnerPlayer : MonoBehaviour
         countPlayer++;
 
         if (countPlayer == 1)
+        {
             playerInput.gameObject.transform.position = spawn1.position;
+            playerIM.playerPrefab = playerRedPrefab;
+        }
 
         if (countPlayer == 2)
             playerInput.gameObject.transform.position = spawn2.position;

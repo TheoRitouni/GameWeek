@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    [SerializeField] private GameObject flyerBullet;
+    [SerializeField] private GameObject flyerBulletBlue;
+    [SerializeField] private GameObject flyerBulletRed;
+
+
     [SerializeField] private GameObject flyerSpawner;
 
     public Action onShoot;
@@ -24,7 +27,12 @@ public class PlayerShoot : MonoBehaviour
 
     void OnShoot()
     {
-        Instantiate(flyerBullet, flyerSpawner.transform.position , transform.rotation);
+        if (tag == "PlayerB")
+            Instantiate(flyerBulletBlue, flyerSpawner.transform.position , transform.rotation);
+
+        if (tag == "PlayerR")
+            Instantiate(flyerBulletRed, flyerSpawner.transform.position, transform.rotation);
+
         onShoot?.Invoke();
     }
 }
