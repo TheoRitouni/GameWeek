@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -12,7 +13,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rigid;
     private Vector3 frameMovement;
-    // Start is called before the first frame update
+
+    private bool isRunning;
+
+    public Action<bool> onRunning;
+
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
@@ -36,9 +41,25 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (movement.sqrMagnitude > 0.01)
+        {
             rigid.velocity = transform.forward * moveSpeed;
+            
+            if (!isRunning)
+            {
+                isRunning = true;
+                onRunning?.Invoke(isRunning);
+            }
+        }
         else
+        {
             rigid.velocity = Vector3.zero;
+
+            if (isRunning)
+            {
+                isRunning = false;
+                onRunning?.Invoke(isRunning);
+            }
+        }
     }
 
     private void OnMoveUp()

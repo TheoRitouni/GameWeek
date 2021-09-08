@@ -193,14 +193,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71979183e245cf94eb669e232e75a08b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minWanderRadius: 20
-  maxWanderRadius: 50
-  minWanderTimer: 2
-  maxWanderTimer: 5
-  minTimerLife: 8
-  maxTimerLife: 15
-  minSpeed: 2
-  maxSpeed: 5
+  minWanderRadius: 40
+  maxWanderRadius: 70
+  minWanderTimer: 4
+  maxWanderTimer: 6
+  minTimerLife: 6
+  maxTimerLife: 12
+  minSpeed: 1
+  maxSpeed: 3
 --- !u!1 &2747357264237281892
 GameObject:
   m_ObjectHideFlags: 0
