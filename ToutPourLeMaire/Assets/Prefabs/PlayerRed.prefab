@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   rotationSpeed: 50
-  forceBump: 2000
+  forceBump: 500
   inputaction: {fileID: 0}
 --- !u!114 &1209662943325672591
 MonoBehaviour:

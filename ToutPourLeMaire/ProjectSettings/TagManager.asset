@@ -9,6 +9,7 @@ TagManager:
   - Pnj
   - FlyerBlue
   - FlyerRed
+  - PileFlyers
   layers:
   - Default
   - TransparentFX
