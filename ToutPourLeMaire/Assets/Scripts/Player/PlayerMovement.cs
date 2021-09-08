@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float forceBump = 200f;
 
     private PlayerInput playerInput;
-    [SerializeField] private InputActionAsset inputaction;
+    //[SerializeField] private InputActionAsset inputaction;
 
     private bool isBump = false;
     [SerializeField] private float timerBump = 0.2f;

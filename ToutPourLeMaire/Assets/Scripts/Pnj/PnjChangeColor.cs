@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PnjChangeColor : MonoBehaviour
 {
+    [Header("Animator")]
+    [SerializeField] Animator animator;
+
     [Header("Data")]
     [SerializeField] private HitstopData changeStateHitstop;
     [SerializeField] private ShakeData changeStateShake;
@@ -30,15 +33,13 @@ public class PnjChangeColor : MonoBehaviour
             if (other.CompareTag("FlyerBlue"))
             {
                 material = blue;
-                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
-                ShakeManager.getInstance().Shake(changeStateShake);
+                OnChangeState();
             }
 
             if (other.CompareTag("FlyerRed"))
             {
                 material = red;
-                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
-                ShakeManager.getInstance().Shake(changeStateShake);
+                OnChangeState();
             }
 
             renderer.material = material;
@@ -49,8 +50,7 @@ public class PnjChangeColor : MonoBehaviour
             if (other.CompareTag("FlyerRed"))
             {
                 material = basic;
-                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
-                ShakeManager.getInstance().Shake(changeStateShake);
+                OnChangeState();
             }
 
             renderer.material = material;
@@ -62,10 +62,18 @@ public class PnjChangeColor : MonoBehaviour
             if (other.CompareTag("FlyerBlue"))
             {
                 material = basic;
-                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
+                OnChangeState();
             }
 
             renderer.material = material;
         }
     }
+
+    private void OnChangeState()
+    {
+        animator.SetTrigger("TractHit");
+        ShakeManager.getInstance().Shake(changeStateShake);
+        HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
+    }
+
 }

@@ -16,7 +16,8 @@ public class PlayerFeedbacks : MonoBehaviour
     [SerializeField] ShakeData shakeData;
 
     [Header("Sounds")]
-    [SerializeField] AudioClip[] audioClips;
+    [SerializeField] AudioClip[] audioFootsteps;
+    [SerializeField] AudioClip[] audioShoots;
 
     [Header("Audio")]
     [SerializeField] AudioSource audioRun;
@@ -34,11 +35,8 @@ public class PlayerFeedbacks : MonoBehaviour
     {
         playerAnimator.SetTrigger("Shoot");
 
-        int clipToPlay;
-        int maxClips = audioClips.Length - 1;
-
-        clipToPlay = Random.Range(0, maxClips);
-        audioShoot.clip = audioClips[clipToPlay];
+        int maxClips = audioShoots.Length - 1;
+        audioShoot.clip = audioShoots[Random.Range(0, maxClips)];
         audioShoot.Play();
         
         ShakeManager.getInstance().Shake(shakeData);
@@ -52,13 +50,19 @@ public class PlayerFeedbacks : MonoBehaviour
     private void OnStartRunning()
     {
         playerAnimator.SetBool("isRunning", true);
-        audioRun.Play();
     }
 
     private void OnStopRunning()
     {
         playerAnimator.SetBool("isRunning", false);
         audioRun.Stop();
+    }
+
+    public void PlayRandomFootStepsSound()
+    {
+        int maxClips = audioFootsteps.Length - 1;
+        audioRun.clip = audioFootsteps[Random.Range(0, maxClips)];
+        audioRun.Play();
     }
 
 }

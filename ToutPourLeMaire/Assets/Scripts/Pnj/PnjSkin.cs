@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class PnjSkin : MonoBehaviour
 {
+    [Header("Skin")]
     [SerializeField] GameObject[] armatures;
-    [SerializeField] Material[] materials;
+    [SerializeField] Material[] materialsList;
     [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
 
-    private void Start()
+    private void Awake()
     {
         //Active Random Armatures
-        int armaturesIndexToActive = Random.Range(0, armatures.Length - 1);
+        int armaturesIndexToActive = Random.Range(0, armatures.Length);
         armatures[armaturesIndexToActive].SetActive(true);
 
         //Active Random Color Skin
-        int skinColorIndexToActive = Random.Range(0, materials.Length - 1);
-        skinnedMeshRenderer.materials[0] = materials[skinColorIndexToActive];
-        //skinnedMeshRenderer.material = materials[skinColorIndexToActive];
+        int skinColorIndexToActive = Random.Range(0, materialsList.Length);
+
+        Material material = materialsList[skinColorIndexToActive];
+        skinnedMeshRenderer.materials[0] = material;
+        Debug.Log(material);
     }
+
+
 
 }
