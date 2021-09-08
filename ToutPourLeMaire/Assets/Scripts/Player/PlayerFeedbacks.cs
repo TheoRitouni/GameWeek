@@ -24,12 +24,13 @@ public class PlayerFeedbacks : MonoBehaviour
 
     private void Start()
     {
-        playerShoot.onShoot += OnShoot;
+        playerShoot.onShoot += OnCharaShoot;
+        playerShoot.onShootFailed += OnShootFailed;
         playerMovement.onStartRunning += OnStartRunning;
         playerMovement.onStopRunning += OnStopRunning;
     }
 
-    private void OnShoot()
+    private void OnCharaShoot()
     {
         playerAnimator.SetTrigger("Shoot");
 
@@ -41,6 +42,11 @@ public class PlayerFeedbacks : MonoBehaviour
         audioShoot.Play();
         
         ShakeManager.getInstance().Shake(shakeData);
+    }
+
+    private void OnShootFailed()
+    {
+        Debug.Log("FailedShoot");
     }
 
     private void OnStartRunning()

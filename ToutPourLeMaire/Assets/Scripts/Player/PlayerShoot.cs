@@ -12,15 +12,18 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private GameObject flyerSpawner;
 
     public Action onShoot;
+    public Action onShootFailed;
 
     [Space]
+    [Header("Flyer")]
+    [SerializeField] private int startFlyer = 15;
     [SerializeField] private int maxFlyer = 20;
     private int flyerRemaining;
 
     // Start is called before the first frame update
     void Start()
     {
-        flyerRemaining = maxFlyer;
+        flyerRemaining = startFlyer;
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class PlayerShoot : MonoBehaviour
 
     void OnShoot()
     {
-        if (flyerRemaining > 0)
+        if (flyerRemaining >= 1)
         {
             if (tag == "PlayerB")
                 Instantiate(flyerBulletBlue, flyerSpawner.transform.position, transform.rotation);
@@ -42,8 +45,12 @@ public class PlayerShoot : MonoBehaviour
             onShoot?.Invoke();
 
             flyerRemaining--;
-
         }
+        else if(flyerRemaining == 0)
+        {
+            onShootFailed?.Invoke();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
