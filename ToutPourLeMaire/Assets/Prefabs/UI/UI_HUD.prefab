@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2664117103711624417}
   - component: {fileID: 2664117103711624419}
   - component: {fileID: 2664117103711624416}
+  - component: {fileID: 1485364473019861605}
   m_Layer: 5
-  m_Name: Poteau_Rouge
+  m_Name: Colonne_Rouge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,6 +75,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1485364473019861605
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664117103711624430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77949bee9e6247b44a04e32c58275564, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2664117103941166800
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +308,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: '60
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c53ea679f2885c347a20f397f2ce40b3, type: 2}
   m_sharedMaterial: {fileID: -6433943352820457, guid: c53ea679f2885c347a20f397f2ce40b3,
@@ -355,12 +377,12 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 11.615723, w: 0}
   m_textInfo:
     textComponent: {fileID: 2664117104046390587}
-    characterCount: 2
+    characterCount: 3
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 1
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -549,8 +571,9 @@ GameObject:
   - component: {fileID: 2664117104351649863}
   - component: {fileID: 2664117104351649849}
   - component: {fileID: 2664117104351649862}
+  - component: {fileID: 4125632536683101806}
   m_Layer: 5
-  m_Name: Poteau_Bleu
+  m_Name: Colonne_Bleu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,6 +635,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &4125632536683101806
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664117104351649860}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94f11a144c64c9a4bb05bb826c37b6b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2664117104358738903
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +870,7 @@ GameObject:
   - component: {fileID: 2664117104524671211}
   - component: {fileID: 2664117104524671213}
   - component: {fileID: 2664117104524671210}
+  - component: {fileID: 8287184277958410861}
   m_Layer: 5
   m_Name: Bar_Red
   m_TagString: Untagged
@@ -891,6 +934,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &8287184277958410861
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664117104524671208}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 30b5a832a3864034e9642ac65896936e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2664117104610698410
 GameObject:
   m_ObjectHideFlags: 0

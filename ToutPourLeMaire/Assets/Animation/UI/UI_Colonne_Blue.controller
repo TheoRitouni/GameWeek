@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -2895577553443000105}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 30, y: 190, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -42,7 +42,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0fbdaef853688994c952c70e5a8fd257, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8b305d40b30b47c4894f0f282359b93b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -54,7 +54,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UI_Idle
+  m_Name: UI_Colonne_Blue
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:

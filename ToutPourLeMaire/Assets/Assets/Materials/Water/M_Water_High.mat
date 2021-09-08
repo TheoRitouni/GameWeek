@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Water
+  m_Name: M_Water_High
   m_Shader: {fileID: -6465566751694194690, guid: 0c931c02db10a5a478883dda4ebb9c60,
     type: 3}
   m_ShaderKeywords: 
@@ -21,16 +21,16 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_157281A8: 0.87
+    - Vector1_157281A8: 0.45
     - Vector1_343C84A8: 0.66
-    - Vector1_50C7E3AA: 16.01
-    - Vector1_5D1A2CB1: 0.05
-    - Vector1_66A55641: 0
+    - Vector1_50C7E3AA: -12.42
+    - Vector1_5D1A2CB1: 0.54
+    - Vector1_66A55641: 0.8
     - Vector1_699056F5: 1.01
-    - Vector1_8ED3FD58: 3.8
+    - Vector1_8ED3FD58: 9.5
     - Vector1_E65F412C: 0
-    - Vector1_FFD5499: 0.2
+    - Vector1_FFD5499: 0.08
     m_Colors:
-    - Color_183F5D50: {r: 0, g: 0.8298459, b: 1, a: 1}
-    - Color_B0D45792: {r: 0, g: 0.11251116, b: 1, a: 1}
-    - Color_DD66603C: {r: 1, g: 1, b: 1, a: 0.59607846}
+    - Color_183F5D50: {r: 0, g: 0.8529201, b: 1, a: 1}
+    - Color_B0D45792: {r: 0, g: 0.23529387, b: 1, a: 1}
+    - Color_DD66603C: {r: 1, g: 1, b: 1, a: 0.6470588}

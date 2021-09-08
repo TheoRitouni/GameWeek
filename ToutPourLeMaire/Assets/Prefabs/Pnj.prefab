@@ -1981,8 +1981,8 @@ MonoBehaviour:
   maxWanderRadius: 50
   minWanderTimer: 2
   maxWanderTimer: 5
-  minTimerLife: 8
-  maxTimerLife: 15
+  minTimerLife: 5
+  maxTimerLife: 11
   minSpeed: 2
   maxSpeed: 5
 --- !u!114 &3256262233127440807

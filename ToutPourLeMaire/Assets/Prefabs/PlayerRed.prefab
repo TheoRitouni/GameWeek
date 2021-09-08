@@ -80,6 +80,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7075024884362225702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2955580261730419704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3833391b5f6ca7a4f8ce1b0c375a0ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFeedbacks: {fileID: 2271780588564121645}
 --- !u!1 &3942325833849336843
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +547,6 @@ MonoBehaviour:
   moveSpeed: 6
   rotationSpeed: 50
   forceBump: 500
-  inputaction: {fileID: 0}
   timerBump: 0.2
 --- !u!114 &1209662943325672591
 MonoBehaviour:
@@ -555,8 +567,6 @@ MonoBehaviour:
   flyerSpawner: {fileID: 77725636685673289}
   startFlyer: 15
   maxFlyer: 20
-  hudGameObject: {fileID: 2664117104610698410, guid: eb4ecbcbdfa3d0b428b2b720d0a6de46,
-    type: 3}
 --- !u!114 &2271780588564121645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +584,25 @@ MonoBehaviour:
   playerShoot: {fileID: 1209662943325672591}
   hitstopData: {fileID: 11400000, guid: 412a89110ee1d1d489523b09ce167f9e, type: 2}
   shakeData: {fileID: 11400000, guid: a275a7fae6deaaa4582b9910d01b3c6d, type: 2}
-  audioClips:
+  audioFootsteps:
+  - {fileID: 8300000, guid: d04e86e9063e28747ab656d2b82162c5, type: 3}
+  - {fileID: 8300000, guid: e91dc74119fd43e46981714da2d563f2, type: 3}
+  - {fileID: 8300000, guid: f2b5232cbe2701d4fae262cfa7f3d300, type: 3}
+  - {fileID: 8300000, guid: acd05b6330055c74e9aa0f056463c471, type: 3}
+  - {fileID: 8300000, guid: 2095d189dc9ed1c4d9f761672405a391, type: 3}
+  - {fileID: 8300000, guid: 51c5eb011c19cd846a01ffec381ae782, type: 3}
+  - {fileID: 8300000, guid: 5b5c9274ede271b4eba6d5f1cb965a9b, type: 3}
+  - {fileID: 8300000, guid: 3851a6c3e7918fe49ac8e138c920cef2, type: 3}
+  - {fileID: 8300000, guid: 24fe4110c43beb540bd200e294097728, type: 3}
+  - {fileID: 8300000, guid: 2071676505915d44d9b3606de6c809d9, type: 3}
+  - {fileID: 8300000, guid: a6989f0904bdf894797bf6e5728a00fc, type: 3}
+  - {fileID: 8300000, guid: f2bb109f480cbc345924f5ed7858b1a0, type: 3}
+  - {fileID: 8300000, guid: 77782dcfef26231419c98b0a493f58b3, type: 3}
+  - {fileID: 8300000, guid: 5339fde907a04b04aaaa5037dab4f43a, type: 3}
+  - {fileID: 8300000, guid: 8e583caff55f8544589d9dd466d77665, type: 3}
+  - {fileID: 8300000, guid: c261d4e8e6ffa96439f41ea92c095809, type: 3}
+  - {fileID: 8300000, guid: a56766061c180b44fa0062f114ff35f1, type: 3}
+  audioShoots:
   - {fileID: 8300000, guid: 354477a56bf9331428f77d2571ccec40, type: 3}
   - {fileID: 8300000, guid: 19fda40abb90c4049886ba0f9e581242, type: 3}
   - {fileID: 8300000, guid: f691f7adacd9c4f489116cee2a43fa20, type: 3}

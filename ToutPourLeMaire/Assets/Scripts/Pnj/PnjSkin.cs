@@ -16,11 +16,11 @@ public class PnjSkin : MonoBehaviour
         armatures[armaturesIndexToActive].SetActive(true);
 
         //Active Random Color Skin
-        int skinColorIndexToActive = Random.Range(0, materialsList.Length);
 
-        Material material = materialsList[skinColorIndexToActive];
-        skinnedMeshRenderer.materials[0] = material;
-        Debug.Log(material);
+        int skinColorIndexToActive = Random.Range(0, materialsList.Length);
+        Material[] mats = skinnedMeshRenderer.materials;
+        mats[0] = materialsList[skinColorIndexToActive];
+        skinnedMeshRenderer.materials = mats;
     }
 
 
