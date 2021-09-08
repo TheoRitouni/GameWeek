@@ -20,10 +20,16 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private int maxFlyer = 20;
     private int flyerRemaining;
 
+    private GameObject hudGameObject;
+    private HudGame hudgame;
+
     // Start is called before the first frame update
     void Start()
     {
         flyerRemaining = startFlyer;
+        hudGameObject = GameObject.FindGameObjectWithTag("HUD");
+        hudgame = hudGameObject.GetComponent<HudGame>();
+        SetFlyerHUD();
     }
 
     // Update is called once per frame
@@ -45,6 +51,9 @@ public class PlayerShoot : MonoBehaviour
             onShoot?.Invoke();
 
             flyerRemaining--;
+
+            SetFlyerHUD();
+
         }
         else if(flyerRemaining == 0)
         {
@@ -62,9 +71,19 @@ public class PlayerShoot : MonoBehaviour
             if (flyerRemaining > maxFlyer)
                 flyerRemaining = maxFlyer;
 
+            SetFlyerHUD();
+
             Destroy(other.gameObject);
-
-
         }
+    }
+
+    private void SetFlyerHUD()
+    {
+        if (tag == "PlayerB")
+            hudgame.SetTextFlyerBlue(flyerRemaining);
+
+        if (tag == "PlayerR")
+            hudgame.SetTextFlyerRed(flyerRemaining);
+
     }
 }

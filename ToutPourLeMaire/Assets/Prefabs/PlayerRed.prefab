@@ -535,6 +535,7 @@ MonoBehaviour:
   rotationSpeed: 50
   forceBump: 500
   inputaction: {fileID: 0}
+  timerBump: 0.2
 --- !u!114 &1209662943325672591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,7 +553,10 @@ MonoBehaviour:
   flyerBulletRed: {fileID: 2408394355805406413, guid: 127d7e99bf216bd4ab65929d5c932ad1,
     type: 3}
   flyerSpawner: {fileID: 77725636685673289}
+  startFlyer: 15
   maxFlyer: 20
+  hudGameObject: {fileID: 2664117104610698410, guid: eb4ecbcbdfa3d0b428b2b720d0a6de46,
+    type: 3}
 --- !u!114 &2271780588564121645
 MonoBehaviour:
   m_ObjectHideFlags: 0
