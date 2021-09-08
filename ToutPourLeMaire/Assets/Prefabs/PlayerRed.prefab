@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 594d460de15349f40b5ea066988b0114,
+  m_Actions: {fileID: -944628639613478452, guid: d4dd69c341c748b4785c92b33000d572,
     type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: PlayerRed
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &9153581090615490786
@@ -533,6 +533,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   rotationSpeed: 50
+  forceBump: 2000
+  inputaction: {fileID: 0}
 --- !u!114 &1209662943325672591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +552,7 @@ MonoBehaviour:
   flyerBulletRed: {fileID: 2408394355805406413, guid: 127d7e99bf216bd4ab65929d5c932ad1,
     type: 3}
   flyerSpawner: {fileID: 77725636685673289}
+  maxFlyer: 20
 --- !u!114 &2271780588564121645
 MonoBehaviour:
   m_ObjectHideFlags: 0

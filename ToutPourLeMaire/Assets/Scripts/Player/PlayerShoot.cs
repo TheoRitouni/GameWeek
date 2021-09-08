@@ -13,10 +13,14 @@ public class PlayerShoot : MonoBehaviour
 
     public Action onShoot;
 
+    [Space]
+    [SerializeField] private int maxFlyer = 20;
+    private int flyerRemaining;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        flyerRemaining = maxFlyer;
     }
 
     // Update is called once per frame
@@ -27,12 +31,33 @@ public class PlayerShoot : MonoBehaviour
 
     void OnShoot()
     {
-        if (tag == "PlayerB")
-            Instantiate(flyerBulletBlue, flyerSpawner.transform.position , transform.rotation);
+        if (flyerRemaining > 0)
+        {
+            if (tag == "PlayerB")
+                Instantiate(flyerBulletBlue, flyerSpawner.transform.position, transform.rotation);
 
-        if (tag == "PlayerR")
-            Instantiate(flyerBulletRed, flyerSpawner.transform.position, transform.rotation);
+            if (tag == "PlayerR")
+                Instantiate(flyerBulletRed, flyerSpawner.transform.position, transform.rotation);
 
-        onShoot?.Invoke();
+            onShoot?.Invoke();
+
+            flyerRemaining--;
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PileFlyers"))
+        {
+            flyerRemaining += other.GetComponent<ReloadFlyers>().reloadFlyer;
+            
+            if (flyerRemaining > maxFlyer)
+                flyerRemaining = maxFlyer;
+
+            Destroy(other.gameObject);
+
+
+        }
     }
 }

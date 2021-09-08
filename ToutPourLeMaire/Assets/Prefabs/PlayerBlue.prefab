@@ -484,6 +484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   rotationSpeed: 50
+  forceBump: 200
+  inputaction: {fileID: -944628639613478452, guid: 594d460de15349f40b5ea066988b0114,
+    type: 3}
 --- !u!114 &3988419244565699239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,6 +504,7 @@ MonoBehaviour:
   flyerBulletRed: {fileID: 2408394355805406413, guid: 127d7e99bf216bd4ab65929d5c932ad1,
     type: 3}
   flyerSpawner: {fileID: 2775346759656668513}
+  maxFlyer: 20
 --- !u!114 &4041659929247139333
 MonoBehaviour:
   m_ObjectHideFlags: 0
