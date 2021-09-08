@@ -35,6 +35,7 @@ public class HitstopManager : Manager
         Time.timeScale = pData.amount;
         yield return new WaitForSecondsRealtime(pData.duration);
         coroutine = null;
+        Time.timeScale = 1f;
     }
 
     /// Returns HitstopManager unique instance and create one if it doesn't exist

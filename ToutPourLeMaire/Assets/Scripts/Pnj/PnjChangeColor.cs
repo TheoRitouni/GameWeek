@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PnjChangeColor : MonoBehaviour
 {
+    [Header("Data")]
+    [SerializeField] private HitstopData changeStateHitstop;
+    [SerializeField] private ShakeData changeStateShake;
 
     [SerializeField] private Material red;
     [SerializeField] private Material blue;
@@ -20,23 +23,23 @@ public class PnjChangeColor : MonoBehaviour
         basic = material;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(material);
-
         if (material == basic)
         {
             if (other.CompareTag("FlyerBlue"))
+            {
                 material = blue;
+                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
+                ShakeManager.getInstance().Shake(changeStateShake);
+            }
 
             if (other.CompareTag("FlyerRed"))
+            {
                 material = red;
+                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
+                ShakeManager.getInstance().Shake(changeStateShake);
+            }
 
             renderer.material = material;
         }
@@ -44,7 +47,11 @@ public class PnjChangeColor : MonoBehaviour
         if (material == blue)
         {
             if (other.CompareTag("FlyerRed"))
+            {
                 material = basic;
+                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
+                ShakeManager.getInstance().Shake(changeStateShake);
+            }
 
             renderer.material = material;
 
@@ -53,10 +60,12 @@ public class PnjChangeColor : MonoBehaviour
         if (material == red)
         {
             if (other.CompareTag("FlyerBlue"))
+            {
                 material = basic;
+                HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
+            }
 
             renderer.material = material;
-
         }
     }
 }

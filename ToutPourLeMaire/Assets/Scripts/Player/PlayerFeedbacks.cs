@@ -24,7 +24,7 @@ public class PlayerFeedbacks : MonoBehaviour
         playerMovement.onStopRunning += OnStopRunning;
     }
 
-    void OnShoot()
+    private void OnShoot()
     {
         playerAnimator.SetTrigger("Shoot");
         ShakeManager.getInstance().Shake(shakeData);

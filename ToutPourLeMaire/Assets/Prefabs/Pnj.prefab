@@ -214,6 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247311617f8ad9e4d9cd57ae56f95605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeStateHitstop: {fileID: 11400000, guid: 412a89110ee1d1d489523b09ce167f9e, type: 2}
+  changeStateShake: {fileID: 11400000, guid: 5aaea96a01a7cc2479c8f52fcb5216ca, type: 2}
   red: {fileID: 2100000, guid: 298e1d82d3e48b748937a72f4811ffc5, type: 2}
   blue: {fileID: 2100000, guid: 706bcd14aa851dd46880a79eaea4b643, type: 2}
   renderer: {fileID: 3932852199423405260}
