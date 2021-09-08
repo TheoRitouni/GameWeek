@@ -6,6 +6,7 @@ public class PlayerFeedbacks : MonoBehaviour
 {
     [SerializeField] Animator playerAnimator;
 
+
     [Header("Scripts")]
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerShoot playerShoot;
@@ -14,8 +15,12 @@ public class PlayerFeedbacks : MonoBehaviour
     [SerializeField] HitstopData hitstopData;
     [SerializeField] ShakeData shakeData;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip[] audioClips;
+
     [Header("Audio")]
     [SerializeField] AudioSource audioRun;
+    [SerializeField] AudioSource audioShoot;
 
     private void Start()
     {
@@ -27,6 +32,14 @@ public class PlayerFeedbacks : MonoBehaviour
     private void OnShoot()
     {
         playerAnimator.SetTrigger("Shoot");
+
+        int clipToPlay;
+        int maxClips = audioClips.Length - 1;
+
+        clipToPlay = Random.Range(0, maxClips);
+        audioShoot.clip = audioClips[clipToPlay];
+        audioShoot.Play();
+        
         ShakeManager.getInstance().Shake(shakeData);
     }
 
