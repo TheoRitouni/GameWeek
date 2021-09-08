@@ -106,9 +106,10 @@ GameObject:
   - component: {fileID: 8263857975652829986}
   - component: {fileID: 7194584176101171909}
   - component: {fileID: 1515506717834359966}
+  - component: {fileID: 3256262233127440807}
   m_Layer: 0
   m_Name: Pnj
-  m_TagString: Untagged
+  m_TagString: Pnj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +202,21 @@ MonoBehaviour:
   maxTimerLife: 15
   minSpeed: 2
   maxSpeed: 5
+--- !u!114 &3256262233127440807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230793791206018256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247311617f8ad9e4d9cd57ae56f95605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 2100000, guid: 298e1d82d3e48b748937a72f4811ffc5, type: 2}
+  blue: {fileID: 2100000, guid: 706bcd14aa851dd46880a79eaea4b643, type: 2}
+  renderer: {fileID: 3932852199423405260}
 --- !u!1 &2747357264237281892
 GameObject:
   m_ObjectHideFlags: 0

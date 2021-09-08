@@ -41,12 +41,5 @@ public class PlayerMovement : MonoBehaviour
             rigid.velocity = Vector3.zero;
     }
 
-    private void OnMoveUp()
-    {
-        Debug.Log("up");
-    }
-    private void OnMoveDown()
-    {
-        Debug.Log("down");
-    }
+  
 }
