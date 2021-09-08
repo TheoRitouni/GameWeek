@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerFeedbacks : MonoBehaviour
 {
     [SerializeField] Animator playerAnimator;
+
+    [Header("Scripts")]
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerShoot playerShoot;
 
@@ -12,10 +14,14 @@ public class PlayerFeedbacks : MonoBehaviour
     [SerializeField] HitstopData hitstopData;
     [SerializeField] ShakeData shakeData;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource audioRun;
+
     private void Start()
     {
         playerShoot.onShoot += OnShoot;
-        playerMovement.onRunning += OnRunning;
+        playerMovement.onStartRunning += OnStartRunning;
+        playerMovement.onStopRunning += OnStopRunning;
     }
 
     void OnShoot()
@@ -24,8 +30,16 @@ public class PlayerFeedbacks : MonoBehaviour
         ShakeManager.getInstance().Shake(shakeData);
     }
 
-    private void OnRunning(bool isRunnning)
+    private void OnStartRunning()
     {
-        playerAnimator.SetBool("isRunning", isRunnning);
+        playerAnimator.SetBool("isRunning", true);
+        audioRun.Play();
     }
+
+    private void OnStopRunning()
+    {
+        playerAnimator.SetBool("isRunning", false);
+        audioRun.Stop();
+    }
+
 }

@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isRunning;
 
-    public Action<bool> onRunning;
+    public Action onStartRunning;
+    public Action onStopRunning;
 
     void Start()
     {
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             if (!isRunning)
             {
                 isRunning = true;
-                onRunning?.Invoke(isRunning);
+                onStartRunning?.Invoke();
             }
         }
         else
@@ -57,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             if (isRunning)
             {
                 isRunning = false;
-                onRunning?.Invoke(isRunning);
+                onStopRunning?.Invoke();
             }
         }
     }
