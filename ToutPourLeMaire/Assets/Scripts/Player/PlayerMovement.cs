@@ -24,16 +24,30 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     [SerializeField] private InputActionAsset inputaction;
 
+    private bool isBump = false;
+    [SerializeField] private float timerBump = 0.2f;
+    private float saveTimerBump = 0.0f;
+
 
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        //GetComponent<PlayerInput>().actions = inputaction;
+        saveTimerBump = timerBump;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(isBump)
+        {
+            timerBump -= Time.deltaTime;
+            
+            if(timerBump <= 0)
+            {
+                timerBump = saveTimerBump;
+                isBump = false;
+            }
+        }
 
     }
 
@@ -48,10 +62,17 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, angle, 0)), Time.deltaTime * rotationSpeed);
         }
 
+        if(!isBump)
+            MovementJoystick();
+        
+    }
+
+    private void MovementJoystick()
+    {
         if (movement.sqrMagnitude > 0.01)
         {
             rigid.velocity = transform.forward * moveSpeed;
-            
+
             if (!isRunning)
             {
                 isRunning = true;
@@ -73,11 +94,19 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag("PlayerB"))
-        {
-            print("oy");
-            rigid.AddForce(-transform.forward * forceBump);
-            collision.collider.GetComponent<Rigidbody>().AddForce(-transform.forward * forceBump);
-        }
+            BumpFonction(collision);
+
+        if (collision.collider.CompareTag("PlayerR"))
+            BumpFonction(collision);
+    }
+
+    private void BumpFonction(Collision collision)
+    {
+        isBump = true;
+        rigid.velocity = Vector3.zero;
+        rigid.AddForce(collision.collider.transform.forward * forceBump, ForceMode.Impulse);
+        collision.collider.GetComponent<Rigidbody>().AddForce
+        (transform.forward * forceBump, ForceMode.Impulse);
     }
 
 

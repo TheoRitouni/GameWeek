@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 50
-  forceBump: 200
+  forceBump: 500
   inputaction: {fileID: -944628639613478452, guid: 594d460de15349f40b5ea066988b0114,
     type: 3}
 --- !u!114 &3988419244565699239
