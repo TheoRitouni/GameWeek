@@ -44,6 +44,10 @@ public class PlayerShoot : MonoBehaviour
 
     void OnShoot()
     {
+        
+        if (hudgame.waitPlayer || hudgame.victoryMenu)
+            return;
+
         if (flyerRemaining >= 1)
         {
             if (tag == "PlayerB")

@@ -10,6 +10,9 @@ public class SpawnerPnj : MonoBehaviour
 
     [SerializeField] private GameObject pnj;
 
+    [Space]
+    [SerializeField] private WaitingPlayer infoWait;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +22,15 @@ public class SpawnerPnj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        freqSpawnPnj -= Time.deltaTime;
-
-        if(freqSpawnPnj <= 0)
+        if (!infoWait.waitPlayers)
         {
-            Instantiate(pnj, gameObject.transform.position, Quaternion.identity);
-            freqSpawnPnj = Random.Range(minFreqSpawnPnj, maxFreqSpawnPnj);
+            freqSpawnPnj -= Time.deltaTime;
+
+            if (freqSpawnPnj <= 0)
+            {
+                Instantiate(pnj, gameObject.transform.position, Quaternion.identity);
+                freqSpawnPnj = Random.Range(minFreqSpawnPnj, maxFreqSpawnPnj);
+            }
         }
     }
 }

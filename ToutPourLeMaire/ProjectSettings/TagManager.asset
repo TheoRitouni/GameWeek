@@ -11,6 +11,8 @@ TagManager:
   - FlyerRed
   - PileFlyers
   - HUD
+  - Pause
+  - Manager
   layers:
   - Default
   - TransparentFX

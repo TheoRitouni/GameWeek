@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ManagerSpawner : MonoBehaviour
 {
+    public bool waitPlayers = false;
     // Start is called before the first frame update
     void Start()
     {

@@ -31,11 +31,16 @@ public class PnjChangeColor : MonoBehaviour
 
     public System.Action<Color> onChangeColor;
 
-    // Start is called before the first frame update
+    private GameObject hudGameObject;
+    private HudGame hudgame;
+
     void Start()
     {
         material = renderer.material;
         basic = material;
+
+        hudGameObject = GameObject.FindGameObjectWithTag("HUD");
+        hudgame = hudGameObject.GetComponent<HudGame>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,12 +52,14 @@ public class PnjChangeColor : MonoBehaviour
             {
                 onChangeColor?.Invoke(blueColor);
                 OnChangeState();
+                hudgame.countBluePnj++;
             }
             //Set Red
             if (other.CompareTag("FlyerRed"))
             {
                 onChangeColor?.Invoke(redColor);
                 OnChangeState();
+                hudgame.countRedPnj++;
             }
 
             renderer.material = material;
@@ -64,6 +71,8 @@ public class PnjChangeColor : MonoBehaviour
             {
                 onChangeColor?.Invoke(basicColor);
                 OnChangeState();
+                hudgame.countBluePnj--;
+
             }
 
             renderer.material = material;
@@ -76,6 +85,7 @@ public class PnjChangeColor : MonoBehaviour
             {
                 onChangeColor?.Invoke(basicColor);
                 OnChangeState();
+                hudgame.countRedPnj--;
             }
 
             renderer.material = material;
