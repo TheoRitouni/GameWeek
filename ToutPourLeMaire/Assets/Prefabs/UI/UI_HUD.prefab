@@ -1226,13 +1226,16 @@ MonoBehaviour:
   timerText: {fileID: 2664117104046390587}
   flyerRedText: {fileID: 2664117104358738889}
   flyerBlueText: {fileID: 2664117104798453348}
-  timerGame: 10
+  timerGame: 60
   rateRedText: {fileID: 2664117105078541851}
   rateBlueText: {fileID: 2664117104258292303}
   imageRedBar: {fileID: 2664117104524671210}
   countBluePnj: 0
   countRedPnj: 0
+  victoryMenu: 0
   victoryText: {fileID: 562013656}
+  infoWait: {fileID: 0}
+  waitPlayer: 0
 --- !u!1 &2664117104798453346
 GameObject:
   m_ObjectHideFlags: 0
