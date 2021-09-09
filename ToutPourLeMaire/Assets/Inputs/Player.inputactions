@@ -14,25 +14,25 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MoveUp",
-                    "type": "Button",
-                    "id": "3188543e-19b6-4fc8-9c8d-0f62e48cce15",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "MoveDown",
-                    "type": "Button",
-                    "id": "4625565a-24c8-4cbe-b076-2f02b7658035",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "8fa0acdc-2eb1-4995-b20c-48a208618c1a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "571a44c2-4db9-4e6f-86ad-20844d2a9925",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "14217c05-9d51-4f8d-b823-fd990261fd1f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -52,34 +52,34 @@
                 },
                 {
                     "name": "",
-                    "id": "d7721cf9-7ee3-4a60-bbda-0e5c5df6a541",
-                    "path": "<Gamepad>/dpad/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveUp",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "19686af6-093c-4e82-9262-a43a4bdc747c",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "aa0af50d-9ef7-4f6f-a338-9cfa20ca7935",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1601d605-ceb0-4a7f-8ef2-21475396a600",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c53e8bb5-d0fd-48b3-9ae3-5ba8972fdf9a",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

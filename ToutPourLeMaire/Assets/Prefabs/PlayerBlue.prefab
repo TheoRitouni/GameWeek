@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 6383902652007495370}
   - component: {fileID: 3988419244565699239}
   - component: {fileID: 4041659929247139333}
+  - component: {fileID: 8897245567215093065}
   m_Layer: 0
   m_Name: PlayerBlue
   m_TagString: PlayerB
@@ -565,6 +566,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 614d0c86643fdd447bb8ee745c9aa2fd, type: 3}
   audioRun: {fileID: 1750177252015952854}
   audioShoot: {fileID: 2281556647961896849}
+--- !u!114 &8897245567215093065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383902652007495380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c814ff0d817a6c24487898ce9da9259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 7253498831130750922, guid: 31c927042d8928b4792753b413b2f951, type: 3}
 --- !u!1 &7055213167383416450
 GameObject:
   m_ObjectHideFlags: 0

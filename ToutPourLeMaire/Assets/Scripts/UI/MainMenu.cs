@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene(int value)
     {
-        SceneManager.LoadScene(value);
+        SceneManager.LoadSceneAsync(value);
     }
 
     public void SetBGMVolume()
