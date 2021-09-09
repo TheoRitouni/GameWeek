@@ -46,3 +46,4 @@ MonoBehaviour:
   minFreqSpawnPnj: 10
   maxFreqSpawnPnj: 20
   pnj: {fileID: 2230793791206018256, guid: 67ba1edbb74363e4a80548f79b761d89, type: 3}
+  infoWait: {fileID: 0}

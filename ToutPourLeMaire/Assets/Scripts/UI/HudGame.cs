@@ -27,13 +27,18 @@ public class HudGame : MonoBehaviour
     [HideInInspector] public int countBluePnj = 0;
     [HideInInspector] public int countRedPnj = 0;
 
-    bool victoryMenu = false;
+    [HideInInspector]public bool victoryMenu = false;
 
     [SerializeField] private TextMeshProUGUI victoryText;
+
+    [Space]
+    [SerializeField] private WaitingPlayer infoWait;
+    [HideInInspector] public bool waitPlayer;
 
 
     private void Start()
     {
+        waitPlayer = infoWait.waitPlayers;
         rateRedText.text = (rateRed).ToString() + "%";
         rateBlueText.text = (rateBlue).ToString() + "%";
 
@@ -43,28 +48,34 @@ public class HudGame : MonoBehaviour
 
     void Update()
     {
-        if (timerGame > 0)
-            timerGame -= Time.deltaTime;
-        if (timerGame <= 0 && !victoryMenu)
+        if (!infoWait.waitPlayers)
         {
-            victoryText.enabled = true;
+            if (timerGame > 0)
+                timerGame -= Time.deltaTime;
+            if (timerGame <= 0 && !victoryMenu)
+            {
+                victoryText.enabled = true;
 
-            if (rateRed > rateBlue)
-                victoryText.text = "Red Win";
-            else if (rateRed < rateBlue) 
-                victoryText.text = "Blue Win";
-            else
-                victoryText.text = "Egality";
+                if (rateRed > rateBlue)
+                    victoryText.text = "Red Win";
+                else if (rateRed < rateBlue)
+                    victoryText.text = "Blue Win";
+                else
+                    victoryText.text = "Egality";
 
-            Time.timeScale = 0;
-            victoryMenu = true;
-            SceneManager.LoadScene("VictoryMenu", LoadSceneMode.Additive);
+                Time.timeScale = 0;
+                victoryMenu = true;
+                SceneManager.LoadScene("VictoryMenu", LoadSceneMode.Additive);
+            }
+
+            timerText.text = ((int)timerGame).ToString();
+
+            if (countBluePnj > 0 || countRedPnj > 0)
+                ResultOfRate();
         }
 
-        timerText.text = ((int)timerGame).ToString();
+        waitPlayer = infoWait.waitPlayers;
 
-        if (countBluePnj > 0 || countRedPnj > 0)
-            ResultOfRate();
     }
 
     public void SetTextFlyerRed(int flyernbr)

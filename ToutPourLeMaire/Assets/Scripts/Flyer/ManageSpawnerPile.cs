@@ -6,15 +6,20 @@ public class ManageSpawnerPile : MonoBehaviour
 {
     [SerializeField] private float timerSpawn = 10f;
     private float saveTimerSpawn;
+    private WaitingPlayer waitInfo;
     // Start is called before the first frame update
     void Start()
     {
         saveTimerSpawn = timerSpawn;
+        waitInfo = GetComponent<WaitingPlayer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (waitInfo.waitPlayers)
+            return;
+
         timerSpawn -= Time.deltaTime;
 
         if(timerSpawn <= 0)

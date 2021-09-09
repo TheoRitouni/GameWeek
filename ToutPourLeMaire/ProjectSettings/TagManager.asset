@@ -12,6 +12,7 @@ TagManager:
   - PileFlyers
   - HUD
   - Pause
+  - Manager
   layers:
   - Default
   - TransparentFX

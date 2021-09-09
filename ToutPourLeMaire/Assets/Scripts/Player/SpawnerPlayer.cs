@@ -14,6 +14,10 @@ public class SpawnerPlayer : MonoBehaviour
 
     private PlayerInputManager playerIM;
 
+    [Space]
+    [SerializeField] private WaitingPlayer infoWait;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,7 @@ public class SpawnerPlayer : MonoBehaviour
     public void OnPlayerJoined(PlayerInput playerInput)
     { 
         countPlayer++;
+        infoWait.nbrPlayer++;
 
         if (countPlayer == 1)
         {
@@ -45,5 +50,7 @@ public class SpawnerPlayer : MonoBehaviour
     private void OnPlayerLeft()
     {
         countPlayer--;
+        infoWait.nbrPlayer--;
+
     }
 }

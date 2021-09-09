@@ -44,7 +44,7 @@ public class PlayerFeedbacks : MonoBehaviour
 
     private void OnShootFailed()
     {
-        Debug.Log("FailedShoot");
+
     }
 
     private void OnStartRunning()
