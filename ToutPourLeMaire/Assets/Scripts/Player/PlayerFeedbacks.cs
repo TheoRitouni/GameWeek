@@ -23,6 +23,9 @@ public class PlayerFeedbacks : MonoBehaviour
     [SerializeField] AudioSource audioRun;
     [SerializeField] AudioSource audioShoot;
 
+    [Header("Particles")]
+    [SerializeField] ParticleSystem ps_Run;
+
     private void Start()
     {
         playerShoot.onShoot += OnCharaShoot;
@@ -63,6 +66,8 @@ public class PlayerFeedbacks : MonoBehaviour
         int maxClips = audioFootsteps.Length - 1;
         audioRun.clip = audioFootsteps[Random.Range(0, maxClips)];
         audioRun.Play();
+
+        ps_Run.Play();
     }
 
 }

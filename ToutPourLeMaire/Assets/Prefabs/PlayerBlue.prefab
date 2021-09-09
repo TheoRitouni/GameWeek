@@ -435,7 +435,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!136 &7096332087271560299
@@ -565,6 +565,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 614d0c86643fdd447bb8ee745c9aa2fd, type: 3}
   audioRun: {fileID: 1750177252015952854}
   audioShoot: {fileID: 2281556647961896849}
+  ps_Run: {fileID: 7732832793791414564}
 --- !u!1 &7055213167383416450
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +719,12 @@ PrefabInstance:
 --- !u!4 &8225637419541212458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6913122547221655156, guid: 41ace3927f8673844b9bb413deea9c1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3303124187031913310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7732832793791414564 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5082179714851013242, guid: 41ace3927f8673844b9bb413deea9c1b,
     type: 3}
   m_PrefabInstance: {fileID: 3303124187031913310}
   m_PrefabAsset: {fileID: 0}

@@ -67,13 +67,14 @@ public class PlayerShoot : MonoBehaviour
         if (other.CompareTag("PileFlyers"))
         {
             flyerRemaining += other.GetComponent<ReloadFlyers>().reloadFlyer;
-            
+
+            //Play Flyer Pile Taken Visual
+            other.GetComponent<FlyerVisual>().OnFlyerPileTake();
+
             if (flyerRemaining > maxFlyer)
                 flyerRemaining = maxFlyer;
 
             SetFlyerHUD();
-
-            Destroy(other.gameObject);
         }
     }
 

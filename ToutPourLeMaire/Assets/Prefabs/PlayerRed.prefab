@@ -614,6 +614,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 614d0c86643fdd447bb8ee745c9aa2fd, type: 3}
   audioRun: {fileID: 6102192178420099970}
   audioShoot: {fileID: 7938361905284728053}
+  ps_Run: {fileID: 5530607632112881420}
 --- !u!1 &9176627320033710969
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +719,12 @@ PrefabInstance:
 --- !u!4 &6176534626838831874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6913122547221655156, guid: 41ace3927f8673844b9bb413deea9c1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 740611038931783030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5530607632112881420 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5082179714851013242, guid: 41ace3927f8673844b9bb413deea9c1b,
     type: 3}
   m_PrefabInstance: {fileID: 740611038931783030}
   m_PrefabAsset: {fileID: 0}

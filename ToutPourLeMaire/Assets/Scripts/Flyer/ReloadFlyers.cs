@@ -7,13 +7,6 @@ public class ReloadFlyers : MonoBehaviour
     [SerializeField] private float lifeTimer = 5f;
     [SerializeField] public int reloadFlyer = 10;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         lifeTimer -= Time.deltaTime;
