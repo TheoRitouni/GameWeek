@@ -2,9 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerShoot : MonoBehaviour
 {
+    [SerializeField] private TextMeshPro flyerBlueText;
+    [SerializeField] private TextMeshPro flyerRedText;
+
     [SerializeField] private GameObject flyerBulletBlue;
     [SerializeField] private GameObject flyerBulletRed;
 
@@ -81,10 +85,10 @@ public class PlayerShoot : MonoBehaviour
     private void SetFlyerHUD()
     {
         if (tag == "PlayerB")
-            hudgame.SetTextFlyerBlue(flyerRemaining);
+            flyerBlueText.text = (flyerRemaining).ToString();
 
         if (tag == "PlayerR")
-            hudgame.SetTextFlyerRed(flyerRemaining);
+            flyerRedText.text = (flyerRemaining).ToString();
 
     }
 }

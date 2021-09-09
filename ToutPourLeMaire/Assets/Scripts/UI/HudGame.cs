@@ -23,15 +23,15 @@ public class HudGame : MonoBehaviour
         timerText.text = ((int)timerGame).ToString();
     }
 
-    public void SetTextFlyerRed(int flyernbr)
-    {
-        flyerRedText.text = (flyernbr).ToString();
-    }
+    //public void SetTextFlyerRed(int flyernbr)
+    //{
+    //    flyerRedText.text = (flyernbr).ToString();
+    //}
 
-    public void SetTextFlyerBlue(int flyernbr)
-    {
-        flyerBlueText.text = (flyernbr).ToString();
-    }
+    //public void SetTextFlyerBlue(int flyernbr)
+    //{
+    //    flyerBlueText.text = (flyernbr).ToString();
+    //}
 
     
 }

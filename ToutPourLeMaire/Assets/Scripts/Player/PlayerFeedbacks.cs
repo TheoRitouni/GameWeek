@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerFeedbacks : MonoBehaviour
 {
     [SerializeField] Animator playerAnimator;
-
+    [SerializeField] GameObject sprite;
 
     [Header("Scripts")]
     [SerializeField] PlayerMovement playerMovement;
@@ -29,9 +29,14 @@ public class PlayerFeedbacks : MonoBehaviour
     private void Start()
     {
         playerShoot.onShoot += OnCharaShoot;
-        playerShoot.onShootFailed += OnShootFailed;
+        //playerShoot.onShootFailed += OnShootFailed;
         playerMovement.onStartRunning += OnStartRunning;
         playerMovement.onStopRunning += OnStopRunning;
+    }
+
+    private void Update()
+    {
+        sprite.transform.LookAt(Camera.main.transform.position, -Vector3.up);
     }
 
     private void OnCharaShoot()
@@ -43,11 +48,6 @@ public class PlayerFeedbacks : MonoBehaviour
         audioShoot.Play();
         
         ShakeManager.getInstance().Shake(shakeData);
-    }
-
-    private void OnShootFailed()
-    {
-        Debug.Log("FailedShoot");
     }
 
     private void OnStartRunning()

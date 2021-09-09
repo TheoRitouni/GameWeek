@@ -128,6 +128,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1408166654326794605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6384862347178442880}
+  - component: {fileID: 3069668543383001849}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6384862347178442880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408166654326794605}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4777392766453191999}
+  m_Father: {fileID: 7984851307501902330}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3069668543383001849
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408166654326794605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3738444, y: 0.32075334, z: 1}
+  m_Center: {x: -0.03803718, y: 0.15810132, z: 0}
 --- !u!1 &4061208447369568581
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,9 +215,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.45385426, b: 0, a: 1}
-  m_Intensity: 1
-  m_Range: 4
+  m_Color: {r: 1, g: 0.8207309, b: 0, a: 1}
+  m_Intensity: 2.5
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -220,19 +265,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!65 &4670623602997571868
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5262286583541190533}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.13259803, y: 0.38823617, z: 0.15321192}
-  m_Center: {x: 0.009918859, y: 0.19411808, z: -0.0014033268}
 --- !u!1 &7984851307501902335
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +278,7 @@ GameObject:
   - component: {fileID: 7984851307501902332}
   - component: {fileID: 2650491433479449314}
   - component: {fileID: 6693126379360098717}
+  - component: {fileID: 6047095357194327142}
   m_Layer: 0
   m_Name: PileOfFlyers
   m_TagString: PileFlyers
@@ -264,7 +297,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.68, z: 4.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4777392766453191999}
+  - {fileID: 6384862347178442880}
   - {fileID: 6281889025803085948}
   - {fileID: 8011838591302792155}
   - {fileID: 7847825498806088423}
@@ -333,6 +366,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTimer: 5
   reloadFlyer: 10
+--- !u!95 &6047095357194327142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984851307501902335}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2be74a835e2fce046954408a31e422a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4212951309048182465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -419,7 +471,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7984851307501902330}
+    m_TransformParent: {fileID: 6384862347178442880}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a0e2329bc73092e469ee5bcad5ebf80e,
         type: 3}

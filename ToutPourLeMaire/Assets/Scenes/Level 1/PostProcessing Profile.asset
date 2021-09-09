@@ -16,13 +16,13 @@ MonoBehaviour:
   m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.769764, z: 0.8801531, w: 0}
+    m_Value: {x: 1, y: 0.94011164, z: 0.8321846, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.72059906, z: 0.96498615, w: 0}
+    m_Value: {x: 1, y: 0.9443047, z: 0.9263575, w: 0}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9212965, z: 0.71725667, w: 0}
+    m_Value: {x: 1, y: 0.8962844, z: 0.70328176, w: 0}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -80,7 +80,6 @@ MonoBehaviour:
   - {fileID: 7610464443555259163}
   - {fileID: -1016701498352907277}
   - {fileID: -7748481820022952633}
-  - {fileID: 8624811089297866709}
 --- !u!114 &1347365302647718203
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -136,66 +135,7 @@ MonoBehaviour:
     m_Value: {x: 0.98880696, y: 1, z: 0.99160546, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.92876947, z: 0.92876935, w: 0}
+    m_Value: {x: 1, y: 0.9709418, z: 0.97432315, w: 0}
   gain:
     m_OverrideState: 1
     m_Value: {x: 0.79783, y: 0.86442405, z: 1, w: 0}
---- !u!114 &8624811089297866709
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
-  m_Name: ChannelMixer
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  redOutRedIn:
-    m_OverrideState: 1
-    m_Value: 17
-    min: -200
-    max: 200
-  redOutGreenIn:
-    m_OverrideState: 1
-    m_Value: 128
-    min: -200
-    max: 200
-  redOutBlueIn:
-    m_OverrideState: 1
-    m_Value: -50
-    min: -200
-    max: 200
-  greenOutRedIn:
-    m_OverrideState: 0
-    m_Value: 0
-    min: -200
-    max: 200
-  greenOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 100
-    min: -200
-    max: 200
-  greenOutBlueIn:
-    m_OverrideState: 0
-    m_Value: 0
-    min: -200
-    max: 200
-  blueOutRedIn:
-    m_OverrideState: 0
-    m_Value: 0
-    min: -200
-    max: 200
-  blueOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 0
-    min: -200
-    max: 200
-  blueOutBlueIn:
-    m_OverrideState: 0
-    m_Value: 100
-    min: -200
-    max: 200
