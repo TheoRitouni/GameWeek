@@ -13,7 +13,7 @@ public class PnjSkin : MonoBehaviour
 
     private void Awake()
     {
-        pnjChangeColor.onChangeColor += ChangeColor;
+        //pnjChangeColor.onChangeColor += ChangeColor;
 
         //Active Random Armatures
         int armaturesIndexToActive = Random.Range(0, armatures.Length);
@@ -26,24 +26,5 @@ public class PnjSkin : MonoBehaviour
         mats[0] = materialsList[skinColorIndexToActive];
         skinnedMeshRenderer.materials = mats;
     }
-
-    private void ChangeColor(Color colorToAssign)
-    {
-        MeshRenderer[] children = GetComponentsInChildren<MeshRenderer>();
-
-        foreach (MeshRenderer rend in children)
-        {
-            foreach (Material mat in rend.materials)
-            {
-                mat.SetColor("_FilterColor", colorToAssign);
-            }
-        }
-
-        Material[] mats = skinnedMeshRenderer.materials;
-        mats[0].SetColor("_FilterColor", colorToAssign);
-        skinnedMeshRenderer.materials = mats;
-    }
-
-
 
 }

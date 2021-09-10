@@ -34,6 +34,8 @@ public class HudGame : MonoBehaviour
     [Space]
     [SerializeField] private WaitingPlayer infoWait;
     [HideInInspector] public bool waitPlayer;
+    [SerializeField] private AudioSource audioSource;
+    private bool musicTimer = false;
 
 
     private void Start()
@@ -50,18 +52,25 @@ public class HudGame : MonoBehaviour
     {
         if (!infoWait.waitPlayers)
         {
+            if(timerGame < 10 && timerGame > 0 && !musicTimer)
+            {
+                musicTimer = true;
+                audioSource.Play();
+            }
+                
             if (timerGame > 0)
                 timerGame -= Time.deltaTime;
             if (timerGame <= 0 && !victoryMenu)
             {
+                musicTimer = false;
                 victoryText.enabled = true;
 
                 if (rateRed > rateBlue)
-                    victoryText.text = "Red Win";
+                    victoryText.text = "Red Won the elections";
                 else if (rateRed < rateBlue)
-                    victoryText.text = "Blue Win";
+                    victoryText.text = "Blue Won the elections";
                 else
-                    victoryText.text = "Egality";
+                    victoryText.text = "Egality, you have to do one more!";
 
                 Time.timeScale = 0;
                 victoryMenu = true;

@@ -9,7 +9,7 @@ public class WaitingPlayer : MonoBehaviour
     [HideInInspector] public int nbrPlayer = 0;
 
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private TextMeshProUGUI waitingText;
+    [SerializeField] private GameObject waitingText;
 
 
     [SerializeField] private float timerBeginGame = 5f;
@@ -25,7 +25,7 @@ public class WaitingPlayer : MonoBehaviour
         if (nbrPlayer == 2)
         {
             timerBeginGame -= Time.deltaTime;
-            waitingText.text = "";
+            waitingText.SetActive(false);
         }
 
         if (timerBeginGame < 0)

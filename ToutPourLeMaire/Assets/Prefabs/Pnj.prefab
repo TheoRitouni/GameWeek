@@ -2052,7 +2052,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.45
+  m_Radius: 0.26
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.46, z: 0}
@@ -2143,9 +2143,9 @@ MonoBehaviour:
   redColor: {r: 1, g: 0.2028302, b: 0.27082002, a: 1}
   changeStateHitstop: {fileID: 11400000, guid: 412a89110ee1d1d489523b09ce167f9e, type: 2}
   changeStateShake: {fileID: 11400000, guid: 5aaea96a01a7cc2479c8f52fcb5216ca, type: 2}
-  red: {fileID: 2100000, guid: 298e1d82d3e48b748937a72f4811ffc5, type: 2}
-  blue: {fileID: 2100000, guid: 706bcd14aa851dd46880a79eaea4b643, type: 2}
   renderer: {fileID: 8345850486396365253}
+  skinnedMeshRenderer: {fileID: 8345850486396365253}
+  tractCollider: {fileID: 2628288899067117308}
 --- !u!114 &1233764213422556503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2607,7 +2607,7 @@ GameObject:
   - component: {fileID: 3730791727945412437}
   m_Layer: 0
   m_Name: ColliderTract
-  m_TagString: Pnj
+  m_TagString: PnjTract
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2636,7 +2636,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.73
+  m_Radius: 0.31
   m_Height: 2.02
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

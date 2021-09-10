@@ -16,16 +16,20 @@ public class PnjChangeColor : MonoBehaviour
     [SerializeField] Color blueColor;
     [SerializeField] Color redColor;
 
+    private int colorInt = 0;
+    private string colorType = "basic";
+
     [Header("Data")]
     [SerializeField] private HitstopData changeStateHitstop;
     [SerializeField] private ShakeData changeStateShake;
 
-    [SerializeField] private Material red;
-    [SerializeField] private Material blue;
-
     [Header("Renderer")]
     [SerializeField] private Renderer renderer;
-    
+    [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
+
+    [SerializeField] private GameObject tractCollider;
+
+
     private Material basic;
     private Material material;
 
@@ -45,50 +49,68 @@ public class PnjChangeColor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (material == basic)
+        if(tractCollider.tag != other.tag)
         {
-            //Set Blue
-            if (other.CompareTag("FlyerBlue"))
+            
+            if (colorInt == 0)
             {
-                onChangeColor?.Invoke(blueColor);
-                OnChangeState();
-                hudgame.countBluePnj++;
+                //Set Blue
+                if (other.CompareTag("FlyerBlue"))
+                {
+                    colorInt = 1;
+
+                    ChangeColor(blueColor);
+
+                    OnChangeState();
+                    hudgame.countBluePnj++;
+                }
+                //Set Red
+                if (other.CompareTag("FlyerRed"))
+                {
+                    colorInt = 2;
+
+                    ChangeColor(redColor);
+
+                    OnChangeState();
+                    hudgame.countRedPnj++;
+                }
+
+                renderer.material = material;
             }
-            //Set Red
-            if (other.CompareTag("FlyerRed"))
+            //Set Basic
+            if (colorInt == 1)
             {
-                onChangeColor?.Invoke(redColor);
-                OnChangeState();
-                hudgame.countRedPnj++;
-            }
+                if (other.CompareTag("FlyerRed"))
+                {
+                    colorInt = 0;
 
-            renderer.material = material;
-        }
-        //Set Basic
-        if (material == blue)
-        {
-            if (other.CompareTag("FlyerRed"))
+                    ChangeColor(basicColor);
+                    Debug.Log(basicColor);
+
+                    OnChangeState();
+                    hudgame.countBluePnj--;
+
+                }
+
+                renderer.material = material;
+
+            }
+            //Set Basic
+            if (colorInt == 2)
             {
-                onChangeColor?.Invoke(basicColor);
-                OnChangeState();
-                hudgame.countBluePnj--;
+                if (other.CompareTag("FlyerBlue"))
+                {
+                    colorInt = 0;
 
+                    ChangeColor(basicColor);
+                    Debug.Log(basicColor);
+
+                    OnChangeState();
+                    hudgame.countRedPnj--;
+                }
+
+                renderer.material = material;
             }
-
-            renderer.material = material;
-
-        }
-        //Set Basic
-        if (material == red)
-        {
-            if (other.CompareTag("FlyerBlue"))
-            {
-                onChangeColor?.Invoke(basicColor);
-                OnChangeState();
-                hudgame.countRedPnj--;
-            }
-
-            renderer.material = material;
         }
     }
 
@@ -101,5 +123,23 @@ public class PnjChangeColor : MonoBehaviour
         ShakeManager.getInstance().Shake(changeStateShake);
         HitstopManager.getInstance().PlayHitStop(changeStateHitstop);
     }
+
+    private void ChangeColor(Color colorToAssign)
+    {
+        MeshRenderer[] children = GetComponentsInChildren<MeshRenderer>();
+
+        foreach (MeshRenderer rend in children)
+        {
+            foreach (Material mat in rend.materials)
+            {
+                mat.SetColor("_FilterColor", colorToAssign);
+            }
+        }
+
+        Material[] mats = skinnedMeshRenderer.materials;
+        mats[0].SetColor("_FilterColor", colorToAssign);
+        skinnedMeshRenderer.materials = mats;
+    }
+
 
 }

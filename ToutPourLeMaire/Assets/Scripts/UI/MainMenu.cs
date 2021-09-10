@@ -11,6 +11,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Slider sliderBGM;
     [SerializeField] private Slider sliderEffects;
 
+    public void TimeScaleNormal()
+    {
+        Time.timeScale = 1f;
+    }
 
     public void LoadScene(int value)
     {

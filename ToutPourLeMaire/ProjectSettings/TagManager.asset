@@ -13,6 +13,7 @@ TagManager:
   - HUD
   - Pause
   - Manager
+  - PnjTract
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - PnjTract
   - 
   - 
   - 
